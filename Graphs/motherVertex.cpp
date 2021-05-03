@@ -78,20 +78,3 @@ int main()
 	
 	return 0;
 }
-
-// sample i/o
-/*
- i/p
-
-3 4
-
-0 1
-0 2
-1 2
-2 1
-
-o/p
-
-0
-
-/*
