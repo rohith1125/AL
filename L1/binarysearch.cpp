@@ -5,11 +5,12 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
+int c;
 int binarySearch(int *a, int n, int key)
 {
 	//static int count = 0;
 	int first = 0, last = n - 1;
+	c++;
 	while(first <= last)
 	{
 		int mid = (last + first) / 2;
