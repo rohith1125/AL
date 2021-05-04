@@ -1,36 +1,63 @@
-#include<iostream>
+//Created by Sai Rohith on 2021-05-03
+//Copyright © 2021 Sai Rohith. All rights reserved.
+
+//Interpolation Search
+
+#include<bits/stdc++.h>
 using namespace std;
-int interpolationSearch(int array[], int begin, int end, int key) {
-   int dist, valRange, indexRange, predict;
-   float fraction;
-   while(begin <= end && key >= array[begin] && key <= array[end]) {
-      dist = key - array[begin];
-      valRange = array[end] - array[begin];     //range of value
-      fraction = dist / valRange;
-      indexRange = end - begin;
-      predict = begin + (fraction * indexRange);      //predictd position of the key
-      if(array[predict] == key)
-         return predict;
-      if(array[predict] < key)
-         begin = predict +1;
-      else
-         end = predict - 1;
-   }
-   return -1;
+
+
+int interpolationSearch(int arr[], int n, int x)
+{
+
+	int Min = 0, Max = (n - 1);
+     
+
+	while (Min <= Max && x >= arr[Min] && x <= arr[Max])
+	{    
+	     
+		if (Min == Max)
+		{    
+			if (arr[Min] == x) return Min;
+			 
+			return -1;
+		}
+		 
+		 
+
+		int pos = Min + (((double)(Max - Min) /
+			(arr[Max] - arr[Min])) * (x - arr[Min]));
+         
+
+		if (arr[pos] == x){ 
+			return pos;}
+
+
+		if (arr[pos] < x){ 
+			Min = pos + 1;}
+
+
+		else{
+			Max = pos - 1;}
+	}
+	return -1;
 }
-int main() {
-   int n, searchKey, loc;
-   cout << "Enter number of items: ";
-   cin >> n;
-   int arr[n];      //create an array of size n
-   cout << "Enter items: " << endl;
-   for(int i = 0; i< n; i++) {
-      cin >> arr[i];
-   }
-   cout << "Enter search key to search in the list: ";
-   cin >> searchKey;
-   if((loc = interpolationSearch(arr, 0, n-1, searchKey)) >= 0)
-      cout << "Item found at location: " << loc << endl;
-   else
-      cout << "Item is not found in the list." << endl;
+
+
+int main()
+{
+    int c=0;
+	int arr[] = {10, 12, 13, 16, 18, 19, 20, 21,
+				22, 23, 24, 33, 35, 42, 47};
+	int n = sizeof(arr)/sizeof(arr[0]);
+
+	int x = 18;
+	int index = interpolationSearch(arr, n, x);
+
+
+	if (index != -1)
+		cout << "Element found at index " << index;
+	else
+		cout << "Element not found.";
+	return 0;
 }
