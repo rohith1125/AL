@@ -6,7 +6,7 @@
 
 #include <iostream>
 using namespace std;
-
+ 
 void shellSort(int array[], int n) {
   // Rearrange elements at each n/2, n/4, n/8, ... intervals
   for (int interval = n / 2; interval > 0; interval /= 2) {

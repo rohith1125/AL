@@ -20,7 +20,7 @@ int interpolationSearch(int arr[], int n, int x)
 		{    
 			if (arr[Min] == x) return Min;
 			 
-			return -1;
+			return -1; 
 		}
 		 
 		 
