@@ -31,10 +31,23 @@ void printArray(int array[], int size) {
 
 // Driver code
 int main() {
-  int data[] = {9, 8, 3, 7, 5, 6, 4, 1};
-  int size = sizeof(data) / sizeof(data[0]);
+  int data[100];
+  int size;
+  cout << "input size n"<<endl;
+  cin >> size;
+  for(int j=0;j<size;j++,c++)
+  {
+    cin >> data[j];
+  }
   shellSort(data, size);
   cout << "Sorted array: \n";
   printArray(data, size);
    cout << "Step count:" << c / size << "n+ " << c % size << "\n";
+   cout << "Stepcount:";
+    if (c >= size * size)
+    {
+        cout << c / (size * size) << "n^2+ ";
+        c = c % (size * size);
+    }
+    cout << c / size << "n+ " << c % size << "\n";
 }

@@ -69,5 +69,11 @@ int main()
       radixsort(arr, n); 
     print(arr, n); 
      cout << "Step count:" << c / n << "n+ " << c % n << "\n";
+         if (c >= n * n)
+    {
+        cout << c / (n * n) << "n^2+ ";
+        c = c % (n * n);
+    }
+    cout << c / n << "n+ " << c % n << "\n";
     return 0; 
 }
