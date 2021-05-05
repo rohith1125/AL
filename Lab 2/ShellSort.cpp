@@ -36,5 +36,5 @@ int main() {
   shellSort(data, size);
   cout << "Sorted array: \n";
   printArray(data, size);
-   cout << "Step count:" << c / n << "n+ " << c % n << "\n";
+   cout << "Step count:" << c / size << "n+ " << c % size << "\n";
 }
