@@ -6,13 +6,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void s(int a, int b)
-{
-	a = a + b;
-	b = a - b;
-	a = a - b;
-}
-
 int main()
 {
 	cout << "Enter size: ";
@@ -37,7 +30,7 @@ int main()
 			}
 		}
 
-		s(a[i], a[least]);
+		swap(a[i], a[least]);
 	}
 
 	cout << "Sorted array: ";
