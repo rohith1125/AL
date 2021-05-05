@@ -4,38 +4,51 @@
 //Selection Sort
 
 #include <bits/stdc++.h>
+int c = 0;
 using namespace std;
 
 int main()
 {
-	cout << "Enter size: ";
-	int n;
-	cin >> n;
+    cout << "Enter size: ";
+    int n;
+    cin >> n;
 
-	int a[n];
-	cout << "Enter array elements: ";
-	for(int i = 0 ; i < n ; i++)
-		cin >> a[i];
+    int a[n];
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++, c++)
+        cin >> a[i];
 
-	for(int i = 0 ; i < n - 1 ; i++)
-	{
-		int min = a[i], least = i;
+    for (int i = 0; i < n - 1; i++, c++)
+    {
+        int min = a[i], least = i;
 
-		for(int j = i + 1 ; j < n ; j++)
-		{
-			if(a[j] < min)
-			{
-				min = a[j];
-				least = j;
-			}
-		}
+        for (int j = i + 1; j < n; j++, c++)
+        {
+            if (a[j] < min)
+            {
+                min = a[j];
+                least = j;
+            }
+        }
+        int temp = a[i];
+        a[i] = a[least];
+        a[least] = temp;
+        c += 3;
+    }
 
-		swap(a[i], a[least]);
-	}
+    cout << "Sorted array: ";
+    for (int i = 0; i < n; i++, c++)
+        cout << a[i] << "  ";
 
-	cout << "Sorted array: ";
-	for(int i = 0 ; i < n ; i++)
-		cout << a[i] << "  ";
-
-	return 0;
+    cout << "Step count:" << c / n << "n+ " << c % n << "\n";
+    
+    
+    cout << "Stepcount:";
+    if (c >= n * n)
+    {
+        cout << c / (n * n) << "n^2+ ";
+        c = c % (n * n);
+    }
+    cout << c / n << "n+ " << c % n << "\n";
+    return 0;
 }
