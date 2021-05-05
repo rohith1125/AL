@@ -62,10 +62,14 @@ void print(int arr[], int n)
 
 int main() 
 { 
-    int arr[] = { 170, 45, 75, 90, 802, 24, 2, 66 }; 
-    int n = sizeof(arr) / sizeof(arr[0]); 
-      
-
+    int arr[100];
+    int n;
+    cout << "input array size n"<<endl;
+    cin >> n;
+    for(int j=0;j<n;j++,c++)
+    {
+        cin >> arr[j];
+    }
       radixsort(arr, n); 
     print(arr, n); 
      cout << "Step count:" << c / n << "n+ " << c % n << "\n";
