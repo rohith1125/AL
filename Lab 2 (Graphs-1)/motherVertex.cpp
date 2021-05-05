@@ -78,3 +78,28 @@ int main()
 	
 	return 0;
 }
+/*
+
+5 5
+
+0 1
+1 2
+2 4
+2 3
+4 0
+
+Find the vertices between which path is to be found: 4 1
+Path: 4 -> 0 -> 1
+
+
+5 5
+
+0 1
+1 2
+2 4
+2 3
+4 0
+
+Find the vertices between which path is to be found: 3 0
+No path found between 3 and 0
+*/

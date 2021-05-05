@@ -8,25 +8,15 @@ using namespace std;
 
 int c;
 
-// void printCycle(int **adj, bool *visited, int n, int startVertex)
-// {
-// 	visited[startVertex] =  true;
-// 	cout << startVertex << " ";
-// 	for(int i = 0 ; i < n ; i++, c++)
-// 		if(adj[startVertex][i] == 1)
-// 			printCycle(adj, visited, n, i);
-// }
-
 bool hasCycle(int **adj, bool *visited, int n, int startVertex)
 {
 	visited[startVertex] =  true;
 	c++;
-	// cout << startVertex << " ";
+
 
 	for(int i = 0 ; i < n ; i++, c++)
 		if(adj[startVertex][i] == 1)
 		{
-			//parent[i] = startVertex;
 			c++;
 			if(visited[i])
 				return true;
@@ -74,20 +64,15 @@ int main()
 			c++;
 			int startVertex;
 			c++;
-			// cout << "Enter start vertex: ";
-			// cin >> startVertex;
 			c++;
 
-			// int parent[n];
-			// for(int i = 0 ; i < v ; i++)
-			// 	parent[i] = i;
 
 			for(int i = 0 ; i < v ; i++)
 			{
 				bool ans = hasCycle(adj, visited, v, i);
 				if(ans)
 				{
-					// printCycle(adj, visited, v, i);
+
 					cout << "Cycle exists";
 					cout << "\nStep count: " << c;
 					return 0;
@@ -98,9 +83,7 @@ int main()
 
 
 			}
-			// (hasCycle(adj, visited, v, 0))
-			// 	cout << "Cycle exists";
-			// else
+
 			cout << "No cycle";
 			c++;
 			cout << "\nStep count: " << c;
