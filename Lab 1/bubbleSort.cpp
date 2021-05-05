@@ -23,8 +23,9 @@ int main()
 				swap(a[j], a[j + 1]);
 			}
 	cout << "Sorted array: ";
-	for(int i = 0 ; i < n ; i++,c++)
-		cout << a[i] << "  ";	
+	for(int i = 0 ; i < n ; i++,c++){
+		cout << a[i] << "  ";}	
+	cout<<" "<<endl;
 	 cout << "Step count:" << c / n << "n+ " << c % n << "\n";
 	 cout << "Stepcount:";
     if (c >= n * n)
