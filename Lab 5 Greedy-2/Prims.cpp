@@ -64,7 +64,7 @@ int main()
     cout << "Edge \tWeight\n";
 
     for (i = 1; i < V; i++)
-        cout << parent[i]+1 << " - " << i << " \t" << graph[i][parent[i]] << " \n";
+        cout << parent[i]+1 << " - " << (i+1) << " \t" << graph[i][parent[i]] << " \n";
 
     return 0;
 }
