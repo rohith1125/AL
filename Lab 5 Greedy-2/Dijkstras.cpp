@@ -21,6 +21,7 @@ int main()
 {
 	
 	int v, e;
+	cout<<"Input total Vertices and edges in the graph"<<endl;
 	cin >> v >> e;
 	cout << endl;
 
@@ -35,7 +36,7 @@ int main()
 
 
 	for(int i = 0 ; i < e ; i++)
-	{
+	{   cout<<"Enter extremities of the edge and weight of edge respectively "<<endl;
 		int l, r, w;
 		cin >> l >> r >> w;
 		adj[l][r] = w;
