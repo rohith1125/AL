@@ -1,7 +1,3 @@
-//Created by Sai Rohith on 2021-05-18
-//Copyright © 2021 Sai Rohith. All rights reserved.
-
-//Container Loading
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -64,7 +60,9 @@ bool *load_container(int max, int *weights, int n)
 
 int main()
 {
-    int max = 0;
+    int max;
+    cout << "enter max weight:";
+    cin >> max;
     int n;
     cout << "Enter number of objects:";
     cin >> n;
@@ -73,8 +71,6 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
-        if (max < arr[i])
-            max = arr[i];
     }
 
     bool *taken = load_container(max, arr, n);
