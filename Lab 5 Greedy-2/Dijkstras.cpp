@@ -3,27 +3,33 @@
 
 //Dijkstras
 #include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
-
+int step;
 int findMinVertex(bool *visited, int *distance, int v)
 {
+    step++;
 	int minIndex, minVal = INT_MAX;
-
+    step++;
 	for(int i = 0 ; i < v ; i++)
 	{
+	    step++;
+	    step++;
 		if(!visited[i] && distance[i] < minVal)
 		{
+		    step++;
+		    step++;
 			minVal = distance[i];
 			minIndex = i;
 		}
 	}
-
+    step++;
 	return minIndex;
 }
 
 int main()
 {
-	
+
 	int v, e;
 	cout<<"Input total Vertices and edges in the graph"<<endl;
 	cin >> v >> e;
@@ -51,23 +57,50 @@ int main()
 		visited[i] = false;
 
 	int sv;
-	cout << "Enter start vertex: "; 
+	cout << "Enter start vertex: ";
 	cin >> sv;
 
+    step++;
 	int *distance = new int[v];
+	step++;
 	distance[sv] = 0;
+	step++;
 	for(int i = 0 ; i < v ; i++)
-		if(i != sv)
-			distance[i] = INT_MAX;
+    {
+        step++;
+        step++;
+        if(i != sv)
+        {
+            step++;
+            distance[i] = INT_MAX;
+        }
 
+    }
+    step++;
 	for(int j = 0 ; j < v ; j++)
 	{
+	    step++;
+	    step++;
 		int curr = findMinVertex(visited, distance, v);
+		step++;
 		visited[curr] = true;
+		step++;
 		for(int i = 0 ; i < v ; i++)
-			if(!visited[i] && adj[curr][i] != 0)
-				if(distance[i] > distance[curr] + adj[curr][i])
-					distance[i] = distance[curr] + adj[curr][i];
+        {
+            step++;
+            if(!visited[i] && adj[curr][i] != 0)
+            {
+                step++;
+                if(distance[i] > distance[curr] + adj[curr][i])
+                {
+                    step++;
+                    distance[i] = distance[curr] + adj[curr][i];
+                }
+
+            }
+
+        }
+
 	}
 
 	for(int i = 0 ; i < v ; i++)
@@ -77,7 +110,9 @@ int main()
 			cout << "unreachable" << "\n";
 		else
 			cout << distance[i] << "\n";
+
 	}
+	cout<<"\n No. of steps: "<<step;
 
 	return 0;
 }
